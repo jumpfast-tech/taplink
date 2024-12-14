@@ -34,14 +34,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="none"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:padding="8dp"
             android:fontFamily="sans-serif" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Phone Number Input -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phoneNumberLayout"
+        android:id="@+id/numberLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Phone Number"
@@ -53,6 +53,7 @@
             android:layout_height="wrap_content"
             android:inputType="numberPassword"
             android:maxLength="15"
+            android:textSize="20sp"
             android:fontFamily="sans-serif" />
     </com.google.android.material.textfield.TextInputLayout>
 
