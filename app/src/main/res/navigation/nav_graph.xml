@@ -9,7 +9,7 @@
         android:id="@+id/TapLinkFragment"
         android:name="tech.jumpfast.taplink.tap.TapLinkFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_tap_link">
     </fragment>
 
 </navigation>

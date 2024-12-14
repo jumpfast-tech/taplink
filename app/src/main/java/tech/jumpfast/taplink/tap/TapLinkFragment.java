@@ -16,13 +16,13 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.List;
 
-import tech.jumpfast.taplink.databinding.FragmentFirstBinding;
+import tech.jumpfast.taplink.databinding.FragmentTapLinkBinding;
 import tech.jumpfast.taplink.helpers.CountryCodeHelper;
 import tech.jumpfast.taplink.helpers.WhatsappHelper;
 
 public class TapLinkFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentTapLinkBinding binding;
 
     @Override
     public View onCreateView(
@@ -30,7 +30,7 @@ public class TapLinkFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentTapLinkBinding.inflate(inflater, container, false);
         List<String> countryCodes = CountryCodeHelper.getCountryCodes();
         AutoCompleteTextView countryCodeDropdown = binding.countryCodeDropdown;
 
@@ -52,11 +52,7 @@ public class TapLinkFragment extends Fragment {
         }
 
         countryCodeDropdown.setOnClickListener(view -> countryCodeDropdown.showDropDown());
-        countryCodeDropdown.setOnItemClickListener((parent, view, position, id) -> {
-            String selectedCode = parent.getItemAtPosition(position).toString();
-            // Handle the selected country code
-            Log.v("Chirag", "Selected: " + selectedCode);
-        });
+
         return binding.getRoot();
     }
 
