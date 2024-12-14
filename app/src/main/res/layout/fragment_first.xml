@@ -1,35 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".tap.TapLinkFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
+        android:id="@+id/descriptionText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enter your phone number below."
+        android:textSize="16sp"
+        android:lineSpacingExtra="4dp"
+        android:paddingBottom="16dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-medium" />
 
-        <Button
-            android:id="@+id/button_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/next"
-            app:layout_constraintBottom_toTopOf="@id/textview_first"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <!-- Country Code Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/countryCodeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select Country Code"
+        android:layout_marginBottom="12dp"
+        android:labelFor="@id/countryCodeDropdown">
 
-        <TextView
-            android:id="@+id/textview_first"
-            android:layout_width="wrap_content"
+        <AutoCompleteTextView
+            android:id="@+id/countryCodeDropdown"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_first" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+            android:inputType="none"
+            android:textSize="20sp"
+            android:padding="8dp"
+            android:fontFamily="sans-serif" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Phone Number Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneNumberLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Phone Number"
+        android:layout_marginBottom="20dp">
+
+        <EditText
+            android:id="@+id/numberInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:maxLength="15"
+            android:fontFamily="sans-serif" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Chat"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-medium"
+        android:padding="12dp" />
+
+</LinearLayout>
